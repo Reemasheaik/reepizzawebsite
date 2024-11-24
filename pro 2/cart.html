@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="web.css">
+    <link rel="stylesheet" href="cart.css"> <!-- Link to existing CSS for styling -->
+</head>
+<body>
+    
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+        <div id="cart-items"></div> <!-- Cart items will be displayed here -->
+        <p>Total: Rs <span id="cart-total">0.00</span></p>
+        <button id="checkout-btn" onclick="makePayment()">Checkout</button>
+        <button id="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+
+        <!-- Payment Section -->
+        <h2>Payment Information</h2>
+        <div id="payment-options">
+            <button class="payment-btn" onclick="showCardPayment()">Card Payment</button>
+            <button class="payment-btn" onclick="showCashOnDelivery()">Cash on Delivery</button>
+        </div>
+        
+        <div id="card-payment" class="payment-form" style="display: none;">
+            <h3>Enter Card Details</h3>
+            <form id="payment-form">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" required>
+                
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+
+                <button type="button" id="card-checkout-btn" onclick="processPayment()">Proceed to Payment</button>
+            </form>
+        </div>
+
+        <div id="cash-on-delivery" class="payment-form" style="display: none;">
+            <h3>Cash on Delivery</h3>
+            <p>Choose this option to pay in cash when your order is delivered.</p>
+            
+            <!-- Delivery Address Section -->
+            <label for="delivery-address">Delivery Address:</label>
+            <textarea id="delivery-address" name="delivery-address" placeholder="Enter your delivery address" required></textarea>
+            
+            <!-- Confirm Order Button -->
+            <button type="button" onclick="processCashOnDelivery()">Confirm Order with Address</button>
+        </div>
+
+        <a href="web.html" class="continue-shopping">Continue Shopping</a>
+    </div>
+
+    <script src="cart.js"></script> 
+    <!-- JavaScript to handle cart functionality -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            let totalAmount = 0;
+    
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.textContent = `${item.name} - Rs. ${item.price}`;
+                cartItemsContainer.appendChild(itemElement);
+                totalAmount += item.price;
+            });
+    
+            document.getElementById('cart-total').textContent = totalAmount.toFixed(2);
+        });
+
+        function showCardPayment() {
+            document.getElementById('card-payment').style.display = 'block';
+            document.getElementById('cash-on-delivery').style.display = 'none';
+        }
+
+        function showCashOnDelivery() {
+            document.getElementById('cash-on-delivery').style.display = 'block';
+            document.getElementById('card-payment').style.display = 'none';
+        }
+
+        function processPayment() {
+            alert("Payment successful! Redirecting to confirmation...");
+            localStorage.removeItem('cart'); // Clear cart
+            window.location.href = "confirmation.html";
+        }
+
+        function processCashOnDelivery() {
+            const address = document.getElementById('delivery-address').value;
+            if (address.trim() === "") {
+                alert("Please enter a delivery address.");
+            } else {
+                alert("Order confirmed! You will pay cash upon delivery.");
+                localStorage.removeItem('cart'); // Clear cart
+                window.location.href = "confirmation.html"; // Redirect to confirmation page
+            }
+        }
+
+        function makePayment() {
+            alert("Payment successful! Redirecting to confirmation...");
+            localStorage.removeItem('cart'); // Clear cart
+            window.location.href = "confirmation.html"; // Redirect to confirmation page
+        }
+
+        function clearCart() {
+            localStorage.removeItem('cart'); // Clear cart
+            window.location.reload(); // Refresh page to update display
+        }
+    </script>
+
+    <footer class="footer">
+        <p>&copy; 2024 Crust Pizza. All Rights Reserved.</p>
+    </footer>
+    
+    <script src="web.js"></script>
+</body>
+</html>

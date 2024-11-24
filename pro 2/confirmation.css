@@ -1,0 +1,55 @@
+/* confirmation.css */
+
+/* Add a background image to the body */
+body {
+    background-image: url('images/Funny pizza delivery boy riding red motor bike vector image on VectorStock.jpeg'); /* Replace with the actual path to your image */
+    background-size: contain; /* Ensures the image covers the entire page */
+    background-position: left; /* Centers the image */
+    background-attachment: fixed; /* Keeps the background image fixed when scrolling */
+    height: 100vh; /* Ensures the body takes up the full viewport height */
+    margin: 0; /* Removes default body margin */
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    font-family: Arial, sans-serif; /* Optional: Set a font style */
+    color: white; /* Optional: Changes text color to white to ensure readability */
+}
+
+/* Container for the confirmation message */
+.confirmation-container {
+    text-align: center;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds a semi-transparent background for text readability */
+    border-radius: 10px; /* Optional: Adds rounded corners to the container */
+    max-width: 600px;
+    width: 100%; /* Ensures the container is responsive */
+    color: #fff; /* Ensures text inside the container is white */
+}
+
+.return-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.return-btn:hover {
+    background-color: #e5533f;
+}
+
+/* Footer Section */
+.footer {
+    background: #0a0a0a;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}

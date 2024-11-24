@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="web.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="signin.html">Sign In</a></p>
+    </div>
+
+    <script>
+        // Handle the sign-up form submission
+        document.getElementById('signup-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Retrieve existing users from localStorage or create an empty array
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Check if the email is already registered
+            const userExists = users.some(user => user.email === email);
+            if (userExists) {
+                alert('Email already exists! Please sign in.');
+                return;
+            }
+
+            // Add the new user to the users array
+            users.push({ name, email, password });
+
+            // Save updated users to localStorage
+            localStorage.setItem('users', JSON.stringify(users));
+
+            alert('Sign Up Successful! Redirecting to web.html...');
+            // Redirect to web.html
+            window.location.href = 'web.html';
+        });
+    </script>
+</body>
+</html>

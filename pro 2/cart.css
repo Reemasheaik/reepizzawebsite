@@ -1,0 +1,131 @@
+/* Add a background image to the entire page */
+body {
+    background-image: url('images/bg123.webp'); /* Replace with the correct image path */
+    background-size: contain;
+     background-size: 100% 100%;
+    background-position: center center; /* Centers the background image */
+    background-repeat: repeat; /* Prevents repeating the image */
+    height: 100vh; /* Full height of the viewport */
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Set a clean font */
+}
+
+/* Cart container to style the content box */
+.cart-container {
+    background-color: rgba(252, 250, 250, 0.788); /* Semi-transparent black for readability */
+    color: rgb(8, 8, 8);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 50px auto; /* Centers the container with some margin */
+    text-align: center;
+}
+
+/* General Button Styles */
+button {
+    display: inline-block;
+    padding: 5px 10px; /* Smaller padding for compact size */
+    font-size: 14px; /* Standard font size */
+    color: rgb(0, 0, 0);
+    background-color: #ff6347; /* Tomato color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px; /* Small margin for spacing */
+    width: auto; /* Buttons adjust based on text length */
+    text-align: center; /* Center align text */
+}
+
+button:hover {
+    background-color: #e5533f; /* Darker tomato color on hover */
+}
+
+/* Styling for Continue Shopping Link */
+.continue-shopping {
+    display: inline-block;
+    padding: 5px 10px; /* Compact padding */
+    background-color: #28a745; /* Green */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px; /* Standard font size */
+    width: auto; /* Allow link to resize based on content */
+    text-align: center; /* Center align text */
+}
+
+.continue-shopping:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+
+/* Style for the Cash on Delivery section */
+#cash-on-delivery {
+    margin-top: 20px;
+    background-color: #f9f9f9; /* Light background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the address label */
+#cash-on-delivery label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #333;
+}
+
+/* Styling the address textarea */
+#delivery-address {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    resize: vertical; /* Allow vertical resizing */
+}
+
+/* Placeholder styling */
+#delivery-address::placeholder {
+    color: #aaa; /* Lighter color for the placeholder */
+}
+
+/* Button styling for the Confirm Order button */
+#cash-on-delivery button {
+    background-color: #28a745; /* Green background for confirm order button */
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#cash-on-delivery button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Optional: Styling for the error message when address is empty */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+
+/* Footer Section */
+.footer {
+    background: #0a0a0a;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}

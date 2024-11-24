@@ -1,0 +1,862 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header Section (Cover Background) */
+.header {
+    background-image: url('images/background (2).jpeg'); /* Replace with your image */
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center;
+    background-attachment: fixed; /* Makes the background fixed while scrolling */
+    background-repeat: no-repeat; /* Prevents repeating of the image */
+    height: 100vh; /* 100% viewport height */
+    width: 100vw;  /* 100% viewport width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: rgb(247, 244, 244);
+}
+
+
+.overlay {
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    padding: 50px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+
+.cart-container h2 {
+    font-size: 2rem;
+    color: #ff4500;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#payment-form {
+    text-align: left;
+    margin-top: 20px;
+}
+
+#payment-form label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#payment-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#checkout-btn {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#checkout-btn:hover {
+    background-color: #ff6347;
+}
+
+/* Order Now Button Styling */
+.order-btn {
+    background-color: #ff4500;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.order-btn:hover {
+    background-color: #ff6347;
+    transform: scale(1.05); /* Slight scaling effect */
+}
+
+/* Hover Effect for Menu Items */
+.menu-item:hover {
+    transform: translateY(-10px); /* Slight lift effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    background-color: #ffe5b4; /* Optional: background color change on hover */
+}
+/* Chef Section */
+.chef-section {
+    padding: 50px;
+    background-color: #fff; /* Background color for the section */
+    text-align: center;
+}
+
+.chef-info {
+    max-width: 600px; /* Limit the width of the content */
+    margin: auto; /* Center the section */
+}
+
+.chef-image {
+    width: 200px; /* Set a specific width for the chef's image */
+    height: 200px; /* Set a specific height */
+    border-radius: cover; /* Make the image circular */
+    margin-bottom: 20px; /* Space below the image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.chef-image:hover {
+    transform: scale(1.05); /* Slightly scale up the image */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow effect on hover */
+}
+
+.chef-info h3 {
+    font-size: 2rem; /* Font size for the chef's name */
+    margin-bottom: 10px; /* Space below the name */
+    color: #ff4500; /* Color for the chef's name */
+}
+
+.chef-info p {
+    font-size: 1rem; /* Font size for the description */
+    color: #333; /* Color for the description text */
+}
+
+/* Drinks Menu Section Styles */
+.drinks-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+}
+
+.drinks-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Slider Container */
+.drinks-slider-container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden; /* Hide overflow to show only one image at a time */
+    position: relative;
+}
+
+/* Slider */
+.drinks-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
+}
+
+/* Images in Slider */
+.drinks-slider img {
+    width: 100%;  /* Make sure images take up the container's width */
+    height: 300px; /* Set a fixed height for consistency */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+/* Hover effect on images */
+.drinks-slider img:hover {
+    transform: scale(1.05);  /* Slight zoom effect */
+    opacity: 0.8;  /* Reduce opacity slightly for a hover effect */
+}
+
+/* Navigation Arrows (Previous and Next) */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Grab Now Button Styles */
+.grab-now-container {
+    margin-top: 20px;
+    text-align: center; /* Center the button */
+}
+
+.grab-now-btn {
+    padding: 10px 20px;  /* Reduced padding for a smaller button */
+    font-size: 20px;  /* Smaller font size */
+    color: #fff;
+    background-color: #ff5722; /* Vibrant color */
+    border: none;
+    border-radius: 4px; /* Slightly smaller border radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Ensures the button adjusts to its content */
+    width: auto;  /* Button width auto-adjusts based on content */
+}
+
+.grab-now-btn:hover {
+    background-color: #e64a19; /* Darker shade on hover */
+}
+
+.grab-now-btn:active {
+    transform: scale(0.98); /* Button click effect */
+}
+
+
+
+
+/* Special Offer Section */
+.offer-section {
+    background-color: #dad5d1;
+    padding: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.offer-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.offer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.offer-item {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    text-align: left;
+}
+
+.offer-image {
+    width: 150px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.offer-details h3 {
+    color: #ff4500;
+    font-size: 1.8rem;
+}
+
+.offer-details p {
+    color: #333;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.offer-section .order-btn {
+    background-color: #ff4500;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.offer-section .order-btn:hover {
+    background-color: #ff6347;
+    transform: scale(1.05);
+}
+.confirmation-container {
+    text-align: center;
+    padding: 50px;
+}
+
+.confirmation-container h1 {
+    font-size: 2.5rem;
+    color: #ff4500;
+    margin-bottom: 20px;
+}
+
+.confirmation-container p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.return-btn, .menu-btn {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.return-btn:hover, .menu-btn:hover {
+    background-color: #ff6347;
+}
+
+.cart-container {
+    text-align: center;
+    padding: 50px;
+}
+
+.cart-container h1 {
+    font-size: 2.5rem;
+    color: #ff4500;
+    margin-bottom: 20px;
+}
+
+#cart-items {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#checkout-btn {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#checkout-btn:hover {
+    background-color: #ff6347;
+}
+
+.continue-shopping {
+    display: inline-block;
+    margin-top: 20px;
+    color: #ff4500;
+    text-decoration: underline;
+}
+
+/* Cart Section */
+.cart {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.cart-link {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: inline-block;
+}
+
+.cart-link span {
+    font-weight: bold;
+    margin-left: 10px;
+    background-color: #fff;
+    color: #ff4500;
+    padding: 3px 8px;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+/* Cart Section */
+.cart-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.total-price {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.make-payment-btn {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.make-payment-btn:hover {
+    background-color: #ff6347;
+}
+
+
+/* Other styles remain unchanged */
+
+/* Order Online Section */
+html {
+    scroll-behavior: smooth;
+}
+
+.order-section {
+    padding: 50px;
+    background-color: #fff8e1;
+    text-align: center;
+}
+
+.order-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.order-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* General Small Button Styles */
+button {
+    padding: 5px 10px; /* Reduced padding for smaller size */
+    font-size: 20px; /* Smaller font size */
+    color: white;
+    background-color: #ff4500; /* Tomato color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 5px 0; /* Reduced margin for compact appearance */
+    width: auto; /* Buttons take the size of their content */
+    text-align: center;
+}
+
+/* Hover Effects */
+button:hover {
+    background-color: #ff4500; /* Slightly darker on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Individual Button Colors */
+.payment-btn {
+    background-color: #ff4500; /* Same as general */
+}
+
+.payment-btn:hover {
+    background-color: #ff4500; /* Darker tomato on hover */
+}
+
+#card-checkout-btn {
+    background-color: #007bff; /* Blue for card payment */
+}
+
+#card-checkout-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#cash-on-delivery button {
+    background-color: #28a745; /* Green for cash on delivery */
+}
+
+#cash-on-delivery button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* confirmation page bg
+
+
+
+
+/* Order Item Cards */
+.order-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 250px;
+    text-align: center;
+}
+
+.order-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.order-item h3 {
+    font-size: 1.5rem;
+    color: #ff4500;
+    margin-bottom: 10px;
+}
+
+.order-item p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Order Now Button Styling */
+.order-now-btn {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.order-now-btn:hover {
+    background-color: #ff6347;
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 50px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
+}
+
+.contact-form h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    transition: border 0.3s ease;
+}
+
+/* Focus Effect for Form Fields */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff4500;
+    outline: none;
+}
+
+/* Submit Button Styling */
+.submit-btn {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #ff6347;
+    transform: scale(1.05);
+}
+
+/* Contact Details Section */
+.contact-details {
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
+}
+
+.contact-details h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.contact-details p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+
+
+/* Navbar Section */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px; /* Adjust logo size */
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.nav-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
+}
+/* Checkout and Clear Cart Buttons */
+#checkout-btn, #clear-cart-btn {
+    background-color: #ff4500;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 10px;
+}
+
+#checkout-btn:hover, #clear-cart-btn:hover {
+    background-color: #ff6347;
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+
+/* About Section */
+.about-section {
+    padding: 50px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Sliding Menu Section */
+.menu-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.menu-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Positioned off-screen */
+    transition: all 1s ease-in-out;
+}
+
+.menu-item {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+
+.menu-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.menu-item h3 {
+    margin: 10px 0;
+}
+
+.menu-item p {
+    color: #666;
+}
+
+.menu-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 50px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.contact-details {
+    flex: 1;
+    min-width: 250px;
+}
+
+/*signin.html*/
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e64a19;
+}
+
+a {
+    color: #ff5722;
+    text-decoration: none;
+}
+  
+
+
+
+
+
+
+
+
+/* Footer Section */
+.footer {
+    background: #0a0a0a;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
